@@ -1,0 +1,51 @@
+J2SE - java 2 standered edition - Desktop app
+-core java
+
+
+J2EE - java 2 enterprise edition - Webapp
+-Advance java
+
+J2ME - java 2 micro edition - mobile app
+
+******************************************
+Source code writing :
+Notepad/notepad++
+Netbeans
+Eclipse  ------------I
+Intelij idea
+
+-JRE : Java runtime environment
+Ex : Demo.java
+
+Compilation :
+-Java compiler
+
+Ex : Demo.class
+
+Execution : 
+JVM  :java vertual machine
+*************************************
+WORA : write once run anywhere
+
+********************************************
+JDK  :java development - [JVM, JRE, compiler]
+
+**************************************
+check java in system : 
+cmd ---> java --version
+
+***************************
+class Demo
+{
+	public static void main(String args[])
+	{
+		System.out.println("Hello java")
+	}
+}
+
+===========
+run in cmd : 
+javac Demo.java
+java Demo
+
+**********************************************************
