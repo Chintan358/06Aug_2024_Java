@@ -49,3 +49,130 @@ javac Demo.java
 java Demo
 
 **********************************************************
+Variables
+**************
+
+Datatypes
+******************
+byte	0		1 byte    2^7 - 1  to -2^7  = 127 to -128
+short	0		2 byte    2^15 - 1 to -2^15 = 32767 to -32768
+int		0		4 byte
+long	0		8 byte
+
+float	0.0		4 byte
+double	0.0		8 byte
+
+char			2 byte
+boolean	false	1 bit
+
+String - not a datatype
+
+1 bit
+8 bit - 1 byte
+1024 byte - 1 kb
+1024 kb - 1 mb
+1024 mb - 1 gb
+1024 gb - 1 tb
+
+**********************************************
+Operators : 
+*******************
+Arithmatic : 
++,-,*,/,%
+
+Relational
+>,<,==,!=,>=,<=
+
+Logical
+&& , ||
+
+Assignment : 
+=,+=,-=,
+
+
+unary
+++pre,--pre,post++,post--
+
+Turnary
+***************************************************************
+statemetns
+
+Conditional
+-if
+-if-else
+-switch case
+
+Looping
+-for
+-while
+-dowhile
+
+-prime
+-armstrong
+-fibboncci
+-factorial
+-palindrom
+
+
+array
+
+oops
+access modifier
+
+important keywords
+
+important classes
+
+Exception handling
+
+File IO
+
+Multi threading
+
+Collection
+
+Swing 
+**********************************************************
+MYSQL
+
+**********************************************************
+JDBC
+**********************************************************
+WebTech
+**********************************************************
+Advance java
+**********************************************************
+Hibernate
+**********************************************************
+spring
+
+spring core
+spring mvc
+spring security
+spring boot
+
+-microservice
+
+********************************************************
+AWS - Hosting
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
