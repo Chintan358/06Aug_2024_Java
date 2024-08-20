@@ -5,11 +5,11 @@ public class Variables {
 	public static void main(String[] args) {
 		
 		
-		//int a = 10;
+		//	int a = 10;
 		
-		//String _$89myFirstName = "Sujal";
+		//	String _$89myFirstName = "Sujal";
 		
-		//int public = 10;
+		//	int public = 10;
 		
 	}
 }

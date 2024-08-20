@@ -1,18 +1,48 @@
 package J003_statements;
 
+import java.util.Scanner;
+
 public class S003_grade {
 	public static void main(String[] args) {
 		
+		String choice = "Y";
 		
-		int marks = 62;
+		do
+			{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter marks :");
+		int marks = sc.nextInt();
 		
-		//91- 100  : a
-		//71 - 90 : b
-		//51 - 70 : c
-		//35 - 50 : d
-		//0 - 34 : f
-		//invalid input
 		
+		if(marks>90 && marks<=100)
+		{
+			System.out.println("Grade A");
+		}
+		else if(marks>70 && marks<=90)
+		{
+			System.out.println("Grade B");
+		}
+		else if(marks>50 && marks<=70)
+		{
+			System.out.println("Grade C");
+		}
+		else if(marks>34 && marks<=50)
+		{
+			System.out.println("Grade D");
+		}
+		else if(marks>=0 && marks<=34)
+		{
+			System.out.println("Grade F");
+		}
+		else
+		{
+			System.out.println("Invalid Input");
+		}
+		
+		System.out.println("Do you want to continue? Y/N");
+		choice = sc.next();
+			
+		}while(choice.equalsIgnoreCase("Y"));
 		
 		
 		
