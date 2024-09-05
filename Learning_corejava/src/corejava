@@ -119,6 +119,31 @@ array :
 
 
 oops
+-class
+-logical entity or blueprint
+
+-object
+-real entity
+
+---Object has State and behaviour
+-state / variable / data memeber
+-behaviour / methods/ function member 
+
+method : 
+
+accessmodifier returntype* methodname*(args)
+{
+	//logic
+}
+
+
+-inheritance
+-incaptulation
+-polymorphism
+-abstraction
+
+
+
 access modifier
 
 important keywords
