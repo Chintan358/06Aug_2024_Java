@@ -142,47 +142,19 @@ accessmodifier returntype* methodname*(args)
 -polymorphism
 -abstraction
 
+-Hiding Implimantation and showing functionality to user
 
+-Abstract class : partial abstraction
+--containd both methods abstract and instance
 
-access modifier
+-Interface : fully abstraction
+-contains only abstract method
 
-important keywords
+********************
+Abstract method : 
+-method without body
 
-important classes
-
-Exception handling
-
-File IO
-
-Multi threading
-
-Collection
-
-Swing 
-**********************************************************
-MYSQL
-
-**********************************************************
-JDBC
-**********************************************************
-WebTech
-**********************************************************
-Advance java
-**********************************************************
-Hibernate
-**********************************************************
-spring
-
-spring core
-spring mvc
-spring security
-spring boot
-
--microservice
-
-********************************************************
-AWS - Hosting
-
+ex : public void display();
 
 
 
