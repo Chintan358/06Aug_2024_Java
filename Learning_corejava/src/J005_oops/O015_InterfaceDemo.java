@@ -6,7 +6,7 @@ interface I1
 	public void test();
 }
 
-interface I2
+interface I2 
 {
 	public void run();
 }
