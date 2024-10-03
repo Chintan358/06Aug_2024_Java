@@ -13,8 +13,8 @@ public class F004_File {
 //		file.mkdir();
 		
 		
-		System.out.println(file.isDirectory());
-		System.out.println(file.isFile());
+//		System.out.println(file.isDirectory());
+//		System.out.println(file.isFile());
 		
 //		if(file.exists())
 //		{
