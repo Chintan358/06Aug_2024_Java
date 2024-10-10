@@ -1,6 +1,7 @@
 package J009_collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 public class C001_ArrayList {
@@ -22,7 +23,9 @@ public class C001_ArrayList {
 		al.add("Php");
 		al.add("Android");
 		al.add("Java");
-		al.add(null);
+		//al.add(null);
+		
+		Collections.sort(al);
 		
 		//al.add(1,"SQL");
 		//al.set(1, "SQL");
