@@ -2,6 +2,7 @@ package com;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -25,16 +26,24 @@ public class AddEmp {
 			System.out.println("connection established..");
 			
 			//create astatment
-			Statement st = cn.createStatement();
+//			Statement st = cn.createStatement();
+//			
+//			int i =   st.executeUpdate("insert into emp(id,name,email) values(0,'test','test@gmail.com')");
+//			
+//			if(i>0)
+//			{
+//				System.out.println("Data inserted...");
+//			}
 			
-			int i =   st.executeUpdate("insert into emp(id,name,email) values(0,'test','test@gmail.com')");
 			
-			if(i>0)
-			{
-				System.out.println("Data inserted...");
-			}
-			
-			
+			PreparedStatement ps  =cn.prepareStatement("insert into emp(id,name,email) values(?,?,?)");
+			ps.setInt(1, 0);
+			ps.setString(2, "abc");
+			ps.setString(3, "abc@gmial.com");
+		
+			boolean b = ps.execute();
+			System.out.println(b);
+
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
