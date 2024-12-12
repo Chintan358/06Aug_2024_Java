@@ -1,0 +1,194 @@
+J2SE - java 2 standered edition - Desktop app
+-core java
+
+
+J2EE - java 2 enterprise edition - Webapp
+-Advance java
+
+J2ME - java 2 micro edition - mobile app
+
+******************************************
+Source code writing :
+Notepad/notepad++
+Netbeans
+Eclipse  ------------I
+Intelij idea
+
+-JRE : Java runtime environment
+Ex : Demo.java
+
+Compilation :
+-Java compiler
+
+Ex : Demo.class
+
+Execution : 
+JVM  :java vertual machine
+*************************************
+WORA : write once run anywhere
+
+********************************************
+JDK  :java development - [JVM, JRE, compiler]
+
+**************************************
+check java in system : 
+cmd ---> java --version
+
+***************************
+class Demo
+{
+	public static void main(String args[])
+	{
+		System.out.println("Hello java")
+	}
+}
+
+===========
+run in cmd : 
+javac Demo.java
+java Demo
+
+**********************************************************
+Variables
+**************
+
+Datatypes
+******************
+byte	0		1 byte    2^7 - 1  to -2^7  = 127 to -128
+short	0		2 byte    2^15 - 1 to -2^15 = 32767 to -32768
+int		0		4 byte
+long	0		8 byte
+
+float	0.0		4 byte
+double	0.0		8 byte
+
+char			2 byte
+boolean	false	1 bit
+
+String - not a datatype
+
+1 bit
+8 bit - 1 byte
+1024 byte - 1 kb
+1024 kb - 1 mb
+1024 mb - 1 gb
+1024 gb - 1 tb
+
+**********************************************
+Operators : 
+*******************
+Arithmatic : 
++,-,*,/,%
+
+Relational
+>,<,==,!=,>=,<=
+
+Logical
+&& , ||
+
+Assignment : 
+=,+=,-=,
+
+
+unary
+++pre,--pre,post++,post--
+
+Turnary
+***************************************************************
+statemetns
+
+Conditional
+-if
+-if-else
+-switch case
+
+Looping
+-for
+-while
+-dowhile
+
+-prime
+-armstrong
+-fibboncci
+-factorial
+-palindrom
+
+-Pettern
+
+array : 
+
+
+oops
+-class
+-logical entity or blueprint
+
+-object
+-real entity
+
+---Object has State and behaviour
+-state / variable / data memeber
+-behaviour / methods/ function member 
+
+method : 
+
+accessmodifier returntype* methodname*(args)
+{
+	//logic
+}
+
+
+-inheritance
+-incaptulation
+-polymorphism
+-abstraction
+
+-Hiding Implimantation and showing functionality to user
+
+-Abstract class : partial abstraction
+--containd both methods abstract and instance
+
+-Interface : fully abstraction
+-contains only abstract method
+
+********************
+Abstract method : 
+-method without body
+
+ex : public void display();
+
+
+*****************************
+Importan classes :
+String
+String builder
+String buffer
+Wrapper
+Object
+Math
+Random
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
