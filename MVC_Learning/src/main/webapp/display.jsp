@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,18 +29,15 @@
 	<th colspan="2">Action</th>
 	</tr>
 	
-	
-	
-			<%
-			
+			<%	
 				String email = (String)session.getAttribute("email");
 				if(email==null)
 				{
 					request.setAttribute("err", "Please login first !!!");
 					request.getRequestDispatcher("login.jsp").forward(request, response);
 				}
-			
-			  ArrayList<Student> al = (ArrayList) request.getAttribute("data");
+			%>
+			  <%-- ArrayList<Student> al = (ArrayList) request.getAttribute("data");
 				for(Student s : al)
 				{ %>
 					<tr>
@@ -48,9 +46,23 @@
 					<td><%=s.getEmail() %></td>
 					<td><a href="update?uid=<%=s.getId()%>&action=update" class="btn btn-primary">Update</a></td>
 					<td><a href="update?uid=<%=s.getId()%>&action=delete" class="btn btn-danger">Delete</a></td>
-					</tr>
-				<%}
-			%>
+					</tr> --%>
+			
+			<c:forEach var="s" items="${data}">
+			<tr>
+					<td>${s.getId()}</td>
+					<td>${s.getUname()}</td>
+					<td>${s.getEmail()}</td>
+					<td><a href="update?uid=${s.getId()}&action=update" class="btn btn-primary">Update</a></td>
+					<td><a href="update?uid=${s.getId()}&action=delete" class="btn btn-danger">Delete</a></td>
+					</tr> 
+			
+			</c:forEach>		
+					
+				
+			
+			
+			
 			
 	</table>
 	<a href="logout" class="btn btn-primary">LOGOUT</a>
