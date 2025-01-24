@@ -23,6 +23,9 @@ public class usercontroller extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		String id = req.getParameter("id");
+		
+		
 		String uname = req.getParameter("uname");
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
@@ -54,19 +57,31 @@ public class usercontroller extends HttpServlet {
 		}
 		
 		User u = new User();
+		if(!id.equals(""))
+		{
+			u.setId(Integer.parseInt(id));
+		}
 		u.setUsername(uname);
 		u.setEmail(email);
 		u.setPhone(phone);
 		u.setGender(gender);
 		u.setLanguages(row);
 		u.setCountry(country);
-		u.setImage(filename);
+		u.setImage(filenameToStore);
 		
 		UserDao dao = new UserDao();
 		int i = dao.addUser(u);
 		if(i>0)
 		{
-			req.setAttribute("success", "Registration successfully ");
+			if(id.equals(""))
+			{
+				req.setAttribute("success", "Registration successfully ");
+			}
+			else
+			{
+				req.setAttribute("success", "Update successfully ");
+			}
+			
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		}
 		

@@ -35,7 +35,7 @@
 	<td>${dt.getGender() }</td>
 	<td>${dt.getLanguages() }</td>
 	<td>${dt.getCountry() }</td>
-	<td>${dt.getImage()}</td>
+	<td><img alt="${dt.getImage()}" src="img/${dt.getImage()}" width="50px" height="50px"> </td>
 	<td><a href="update?uid=${dt.getId()}&action=edit" class="btn btn-primary">Edit</a></td>
 	<td><a href="update?uid=${dt.getId()}&action=delete" class="btn btn-danger">Delete</a></td>
 	

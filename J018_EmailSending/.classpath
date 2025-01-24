@@ -8,5 +8,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Chintan_wok/software/unirest-java-1.4.9.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Admin/Downloads/httpclient5-5.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Chintan_wok/software/jakarta.mail-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Chintan_wok/software/jakarta.activation-api-2.1.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
