@@ -13,6 +13,11 @@ public class Tops {
 	@Column(name="id")
 	int id;
 	
+//	@Override
+//	public String toString() {
+//		return "Tops [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + "]";
+//	}
+
 	@Column(name="name")
 	String name;
 	
