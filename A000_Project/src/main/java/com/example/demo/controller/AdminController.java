@@ -26,11 +26,7 @@ public class AdminController {
 		return "user";
 	}
 	
-	@GetMapping("/category")
-	public String category()
-	{
-		return "category";
-	}
+	
 	
 	
 	@GetMapping("/product")
