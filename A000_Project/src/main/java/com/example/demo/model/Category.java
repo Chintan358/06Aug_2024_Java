@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,8 +15,16 @@ public class Category {
 	@Column(name="category_name")
 	private String categoryName;
 	
+	@OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
+	List<Product> products;
 	
 	
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 	public int getCategoryId() {
 		return categoryId;
 	}

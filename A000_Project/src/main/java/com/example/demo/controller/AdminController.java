@@ -29,11 +29,7 @@ public class AdminController {
 	
 	
 	
-	@GetMapping("/product")
-	public String prodct()
-	{
-		return "product";
-	}
+	
 	
 	@GetMapping("/order")
 	public String order()
