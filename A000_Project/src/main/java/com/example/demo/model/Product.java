@@ -28,7 +28,8 @@ public class Product {
 	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
 	List<Cart> catrs;
 	
-	
+	@OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+	List<OrderItem> orderItemes;
 
 	public List<Cart> getCatrs() {
 		return catrs;
@@ -36,6 +37,14 @@ public class Product {
 
 	public void setCatrs(List<Cart> catrs) {
 		this.catrs = catrs;
+	}
+
+	public List<OrderItem> getOrderItemes() {
+		return orderItemes;
+	}
+
+	public void setOrderItemes(List<OrderItem> orderItemes) {
+		this.orderItemes = orderItemes;
 	}
 
 	public int getProductId() {

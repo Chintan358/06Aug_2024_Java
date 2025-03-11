@@ -27,6 +27,17 @@ public class User {
 	
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
 	List<Cart> carts;
+	
+	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	List<Order> orders;
+
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 
 	public int getUserId() {
 		return userId;
