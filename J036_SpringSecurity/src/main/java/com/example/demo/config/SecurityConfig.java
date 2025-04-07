@@ -13,11 +13,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @Configuration
-@EnableMethodSecurity
+@EnableWebSecurity
 public class SecurityConfig {
-   
+	
 	@Bean
 	public PasswordEncoder encoder()
 	{
@@ -48,18 +49,25 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception
 	{
 		
-		httpSecurity.csrf().disable()
+		httpSecurity
+			.csrf()
+			.disable()	
 			.authorizeHttpRequests()
-			.requestMatchers("/public")
+			.
+			
+			
+			requestMatchers("/public","/WEB-INF/**")
 			.permitAll()
-				/*
-				 * .requestMatchers("/admin/**") .hasRole("ADMIN") .requestMatchers("/seller")
-				 * .hasRole("SELLER")
-				 */
+		    .requestMatchers("/admin/**") 
+		    .hasRole("ADMIN")
+		    .requestMatchers("/seller")
+		     .hasRole("SELLER") 
 			.anyRequest()
 			.authenticated()
 			.and()
-			.formLogin();
+			.formLogin() 
+			.loginPage("/public");
+			
 		
 		return httpSecurity.build();
 	}
