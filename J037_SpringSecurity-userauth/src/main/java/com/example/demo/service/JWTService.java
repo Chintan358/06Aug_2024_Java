@@ -2,14 +2,15 @@ package com.example.demo.service;
 
 import java.util.Date;
 
+import org.springframework.stereotype.Service;
+
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.security.SignatureAlgorithm;
 
+@Service
 public class JWTService {
-	
-	
 	
 	public static final String SECRET_KEY="fdftrtrtrebcvfrrtrtretretrewtrtretretrerertreyyrretrert";
 	public static final long ACCESS_TOKEN_EXPIRATION = 15*60*1000;
@@ -28,6 +29,9 @@ public class JWTService {
 				.compact();
 	
 	}
+	
+	
+	
 	
 	public String getUsernamefromToken(String token)
 	{

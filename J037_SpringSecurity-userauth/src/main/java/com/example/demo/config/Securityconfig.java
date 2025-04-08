@@ -14,6 +14,15 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 public class Securityconfig {
 	
+	JwtAuthenticationFilter authenticationFilter;
+	
+	
+	
+	public Securityconfig(JwtAuthenticationFilter authenticationFilter) {
+		super();
+		this.authenticationFilter = authenticationFilter;
+	}
+
 	@Bean
 	public PasswordEncoder encoder()
 	{
