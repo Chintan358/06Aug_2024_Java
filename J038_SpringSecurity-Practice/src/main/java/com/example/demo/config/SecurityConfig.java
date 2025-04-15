@@ -14,13 +14,14 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-public class Securityconfig {
+@EnableWebSecurity
+public class SecurityConfig {
 	
 	JwtAuthenticationFilter authenticationFilter;
 	CustomeAuthenticationEntryPoint authenticationEntryPoint;
 	
 	
-	public Securityconfig(JwtAuthenticationFilter authenticationFilter,CustomeAuthenticationEntryPoint authenticationEntryPoint) {
+	public SecurityConfig(JwtAuthenticationFilter authenticationFilter,CustomeAuthenticationEntryPoint authenticationEntryPoint) {
 		super();
 		this.authenticationFilter = authenticationFilter;
 		this.authenticationEntryPoint = authenticationEntryPoint;
@@ -38,28 +39,23 @@ public class Securityconfig {
 		return configuration.getAuthenticationManager();
 	}
 	
-	
-	
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception
+	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception
 	{
-		http.csrf().disable()
+		httpSecurity.csrf().disable()
 		.authorizeHttpRequests()
-		.requestMatchers("/admin")
+		.requestMatchers("/public")
 		.hasRole("ADMIN")
-		.requestMatchers("/normal")
-		.hasRole("NORMAL")
-		.requestMatchers("/adduser")
-		.permitAll()
-		.requestMatchers("/login")
+		.requestMatchers("/adduser","/login")
 		.permitAll()
 		.anyRequest()
 		.authenticated()
 		.and()
 		.exceptionHandling(exception->exception.authenticationEntryPoint(authenticationEntryPoint))
 		.sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-		.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);	
-		return http.build();
+		.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+	
+		return httpSecurity.build();
 	}
-
+	
 }

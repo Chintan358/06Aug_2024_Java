@@ -1,8 +1,6 @@
 package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +21,7 @@ import com.example.demo.service.JWTService;
 
 @RestController
 public class HomeController {
-		
+	
 	
 	public AuthenticationManager authenticationManager;
 	public JWTService jwtService;
@@ -91,6 +89,21 @@ public class HomeController {
 		repo.save(user);
 		return "success";
 	}
+	
+	
+	
+	@GetMapping("/public")
+	public ResponseEntity<String> publicUser()
+	{
+		return ResponseEntity.ok("public user calling");
+	}
+	
+	@GetMapping("/normal")
+	public ResponseEntity<String> normal()
+	{
+		return ResponseEntity.ok("normal user calling");
+	}
+	
 	
 	
 	
