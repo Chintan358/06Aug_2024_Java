@@ -46,7 +46,7 @@ public class SecurityConfig {
 		.authorizeHttpRequests()
 		.requestMatchers("/public")
 		.hasRole("ADMIN")
-		.requestMatchers("/adduser","/login")
+		.requestMatchers("/adduser","/login","/refresh-token")
 		.permitAll()
 		.anyRequest()
 		.authenticated()

@@ -12,7 +12,7 @@ import io.jsonwebtoken.security.Keys;
 public class JWTService {
 
 	public static final String SECRET_KEY="fdftrtrtrebcvfrrtrtretretrewtrtretretrerertreyyrretrert";
-	public static final long ACCESS_TOKEN_EXPIRATION = 15*60*1000;
+	public static final long ACCESS_TOKEN_EXPIRATION = 1*60*1000;
 	public static final long REFRESH_TOKEN_EXPIRATION = 24*60*1000;
 	
 	public String generateToken(String username, boolean isAccessToken)

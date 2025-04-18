@@ -1,5 +1,8 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.JwtResponse;
 import com.example.demo.dto.RefreshTokenRequest;
+import com.example.demo.dto.RoleDto;
+import com.example.demo.dto.UserDto;
 import com.example.demo.dto.UserRequest;
+import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import com.example.demo.repo.UserRepo;
 import com.example.demo.service.JWTService;
@@ -60,8 +66,25 @@ public class HomeController {
 		String refreshToken = jwtService.generateToken(request.getUsername(),false);
 		
 		User user = repo.findByUsername(request.getUsername());
+		List<RoleDto> rdto = new ArrayList<RoleDto>();
+		UserDto dtos = new UserDto();
+		dtos.setId(user.getId());
+		dtos.setUsername(user.getUsername());
+		dtos.setPassword(user.getPassword());
 		
-		JwtResponse jwtResponse = new JwtResponse(accessToken, refreshToken, user);
+		for(Role r : user.getRoles())
+		{
+			RoleDto dt = new RoleDto();
+			dt.setId(r.getId());
+			dt.setRolename(r.getRolename());
+			
+			rdto.add(dt);
+		}
+		
+		dtos.setRoles(rdto);
+		
+		
+		JwtResponse jwtResponse = new JwtResponse(accessToken, refreshToken, dtos);
 		return ResponseEntity.ok(jwtResponse);
 	}
 	
@@ -75,7 +98,26 @@ public class HomeController {
 			String refreshToken = jwtService.generateToken(UsernameFromRefreshToken, false);
 			User user = repo.findByUsername(UsernameFromRefreshToken);
 			
-			JwtResponse jwtResponse = new JwtResponse(accessToken, refreshToken, user);
+			
+			
+			List<RoleDto> rdto = new ArrayList<RoleDto>();
+			UserDto dtos = new UserDto();
+			dtos.setId(user.getId());
+			dtos.setUsername(user.getUsername());
+			dtos.setPassword(user.getPassword());
+			
+			for(Role r : user.getRoles())
+			{
+				RoleDto dt = new RoleDto();
+				dt.setId(r.getId());
+				dt.setRolename(r.getRolename());
+				
+				rdto.add(dt);
+			}
+			
+			dtos.setRoles(rdto);
+			
+			JwtResponse jwtResponse = new JwtResponse(accessToken, refreshToken, dtos);
 			return ResponseEntity.ok(jwtResponse);		
 		}
 		return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Token");
@@ -84,6 +126,8 @@ public class HomeController {
 	@PostMapping("/adduser")
 	public String adduser(@RequestBody User user)
 	{
+		
+		
 		
 		user.setPassword(encoder.encode(user.getPassword()));
 		repo.save(user);
